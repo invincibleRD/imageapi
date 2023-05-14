@@ -16,7 +16,7 @@ const url = process.env.MONGOURI;
 console.log(process.env.MONGOURI)
 const path = require("path");
 
-const collectionName = "myCollection";
+const collectionName = "requests";
 app.use(express.json());
 app.set("view engine", "ejs");
 
