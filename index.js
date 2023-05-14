@@ -48,6 +48,22 @@ app.post('/upload', upload.single('image'), async (req, res) => {
   }
 });
 
+const fs = require('fs');
+
+app.get('/image/:filename', (req, res) => {
+  const filename = req.params.filename;
+  const filepath = path.join(__dirname, 'uploads', filename);
+  fs.readFile(filepath, (err, data) => {
+    if (err) {
+      res.status(404).send('File not found');
+    } else {
+      res.contentType('image/jpeg');
+      res.send(data);
+    }
+  });
+});
+
+
 app.use((err, req, res, next) => {
   if (err instanceof multer.MulterError) {
     res.status(400).send('File upload error');
