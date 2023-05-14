@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Image Upload</title>
+  </head>
+  <body>
+    <h1>Upload an Image</h1>
+    <form action="/" method="post" enctype="multipart/form-data">
+      <input type="hidden" name="username" value="<%= username %>" />
+      <input type="hidden" name="emailID" value="<%= emailID %>" />
+      <input type="hidden" name="requestID" value="<%= requestID %>" />
+      <input type="file" name="image" />
+      <input type="submit" value="Upload" />
+    </form>
+  </body>
+</html>

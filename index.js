@@ -17,20 +17,29 @@ const url =
 const path = require('path');
 
 const collectionName = 'myCollection';
-
 app.use(express.json());
+app.set('view engine', 'ejs');
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'form.html'));
+  const username = req.query.username;
+  const emailID = req.query.emailID;
+  const requestID = req.query.requestID;
+  // console.log(username);
+  res.render('form', { username,emailID,requestID });
 });
 
-app.post('/upload', upload.single('image'), async (req, res) => {
+app.post('/', upload.single('image'), async (req, res) => {
   const imageUrl = req.file.path;
-  console.log(imageUrl);
+  const username=req.body.username
+  const emailID=req.body.emailID
+  const requestID=req.body.requestID
+  // console.log(imageUrl);
   let client = null;
   try {
     const obj = {
-      name: 'Dipendra',
+      username: username,
+      emailID:emailID,
+      requestID:requestID,
       imageUrl: imageUrl
     };
     const client = new MongoClient(url, { useNewUrlParser: true, useUnifiedTopology: true });
