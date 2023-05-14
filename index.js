@@ -12,7 +12,7 @@ const upload = multer({
   // limits: { fileSize: 1024 * 1024 }
 });
 const MongoClient = require("mongodb").MongoClient;
-const url = process.env.MONGOURI;
+const url = process.env.MONGOURI ;
 // console.log(process.env.MONGOURI)
 const path = require("path");
 
