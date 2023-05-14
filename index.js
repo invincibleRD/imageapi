@@ -13,7 +13,7 @@ const upload = multer({
 });
 const MongoClient = require("mongodb").MongoClient;
 const url = process.env.MONGOURI;
-console.log(process.env.MONGOURI)
+// console.log(process.env.MONGOURI)
 const path = require("path");
 
 const collectionName = "requests";
