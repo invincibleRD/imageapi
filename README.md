@@ -17,7 +17,7 @@ This project is an Express app designed to facilitate the uploading and viewing 
 
 To get started with the project, follow these steps:
 
-1. Clone the repository: `git clone https://github.com/your-username/your-repo.git`
+1. Clone the repository: `git clone https://github.com/invincibleRD/imageapi.git`
 2. Install dependencies: `npm install`
 
 ## Usage
